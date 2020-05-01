@@ -22,7 +22,9 @@
     "test:lint:lockfile": "lockfile-lint --allowed-hosts npm github.com --validate-https --type npm --path package-lock.json",
     "test:lint": "npm-run-all --parallel test:lint:*",
     "test:html": "node scripts/vnu-jar.js",
-    "test:unit": "tape tests/**/*.test.js | faucet"
+    "test:unit": "tape tests/**/*.test.js | faucet",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "repository": "nodejs/nodejs.org",
   "author": "Node.js Website Working Group",
@@ -64,7 +66,8 @@
     "postcss": "^7.0.21",
     "request": "^2.88.0",
     "semver": "^6.3.0",
-    "strftime": "^0.10.0"
+    "strftime": "^0.10.0",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "chokidar": "^3.3.0",
@@ -84,5 +87,6 @@
     "stylelint-config-twbs-bootstrap": "^0.9.0",
     "tape": "^4.11.0",
     "vnu-jar": "19.9.4"
-  }
+  },
+  "snyk": true
 }
